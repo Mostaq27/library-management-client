@@ -1,11 +1,12 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import animation from "../../../assets/loginAnimation.json"
 import Lottie from 'lottie-react'
 import SocialLogin from '../SocialLogin/SocialLogin'
 
 const Login = () => {
+    const [showPass, setShowPass] = useState(true)
     return (
         <>
             <div className="hero min-h-screen bg-base-200">
@@ -29,19 +30,14 @@ const Login = () => {
                                         className="input input-bordered"
                                     />
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        required
-                                        placeholder="password"
-                                        className="input input-bordered"
-                                    />
-                                    <p className="text-red-600">  </p>
-                                </div>
+                                <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
+                        <div className='relative'>
+                            <input type={showPass ? 'password' : 'text'} placeholder="Password" className="input input-bordered w-full"   />
+                            <span type="button" className='absolute btn btn-secondary btn-xs right-2 top-3' onClick={() => setShowPass(!showPass)}>{showPass ? 'show' : 'hide'}</span>
+                        </div>
                                 <div className="form-control mt-6">
                                     <input
                                         className="btn btn-outline"
@@ -49,9 +45,10 @@ const Login = () => {
                                         value="Login"
                                     />
                                 </div>
+                                </div>
                             </form>
                             <p className="my-4 text-center">
-                                New to Tech Point..
+                                New to SUSIS Library..
                                 <Link className="text-orange-600 font-bold ms-1" to="/signup">
                                     Sign Up
                                 </Link>

@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
             <aside>
-                <img src={logo} className="h-40 w-40" alt="" />
+                <img src={logo} className="h-40" alt="" />
                 <p className="text-xl font-medium">SUSIS Library.<br />Providing reliable tech since 1992</p>
             </aside>
             <nav>
