@@ -13,7 +13,7 @@ const TeamMember = () => {
                     </div>
                     <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
                         <div className="space-y-4">
-                            <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center dark:bg-gray-500  max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0" src="https://source.unsplash.com/240x320/?portrait?0" />
+                            <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center dark:bg-gray-500  max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0" src="https://i.ibb.co/r63G5r7/young-adult-enjoying-yoga-nature-1.jpg" />
                             <div className="flex flex-col items-center">
                                 <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
                                 <p className="text-sm dark:text-gray-400">Web developer</p>
