@@ -1,0 +1,32 @@
+[
+    {
+        "photo": "https://i.ibb.co/StGdYn4/handsome-latin-man-helping-his-colleagues-out-by-explaining-some-his-work-library.jpg",
+        "name": "John Doe",
+        "comment": "Great service and products!",
+        "rating": 5
+    },
+    {
+        "photo": "https://i.ibb.co/QCXppMs/smiling-happy-indian-student-with-backpack-pointing-his-finger-wall.jpg",
+        "name": "Alice Smith",
+        "comment": "Fast delivery and good quality.",
+        "rating": 4
+    },
+    {
+        "photo": "https://i.ibb.co/Kscs7r4/positive-college-student-has-dark-skin-carries-folders-book-points-with-cheerful-expression-aside-ha.jpg",
+        "name": "Bob Johnson",
+        "comment": "Excellent customer support.",
+        "rating": 5
+    },
+    {
+        "photo": "https://i.ibb.co/NTgQQdz/pretty-brunette-schoolgirl-standing-holding-yellow-backpack-folder.jpg",
+        "name": "Emily Brown",
+        "comment": "Satisfied with my purchase.",
+        "rating": 4
+    },
+    {
+        "photo": "https://i.ibb.co/J7LB8dS/portrait-happy-young-african-male-student.jpg",
+        "name": "Chris Wilson",
+        "comment": "Highly recommended!",
+        "rating": 5
+    }
+]

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
-import axios from "axios";
+// import axios from "axios";
 
 const auth = getAuth(app)
 export const AuthContext = createContext(null)
@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
 
     //logout 
 
-    const LogOut = () => {
+    const logOut = () => {
         setLoading(true)
         return signOut(auth)
     }
@@ -43,14 +43,14 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
 
             // get and set token
-            if (currentUser) {
-                axios.post('https://language-quest-camp-server.vercel.app/jwt', { email: currentUser.email })
-                    .then(data => {
-                        localStorage.setItem('access-token', data.data.token)
-                    })
-            } else {
-                localStorage.removeItem('access-token')
-            }
+            // if (currentUser) {
+            //     axios.post('https://language-quest-camp-server.vercel.app/jwt', { email: currentUser.email })
+            //         .then(data => {
+            //             localStorage.setItem('access-token', data.data.token)
+            //         })
+            // } else {
+            //     localStorage.removeItem('access-token')
+            // }
             setLoading(false)
         })
         return () => {
@@ -70,7 +70,7 @@ const AuthProvider = ({ children }) => {
         googleSignIn,
         createUser,
         signIn,
-        LogOut,
+        logOut,
         updateUserProfile
     }
 

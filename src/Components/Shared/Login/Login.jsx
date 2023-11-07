@@ -1,66 +1,83 @@
 
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+
+import { useContext, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import animation from "../../../assets/loginAnimation.json"
-import Lottie from 'lottie-react'
-import SocialLogin from '../SocialLogin/SocialLogin'
+import Swal from 'sweetalert2';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { AuthContext } from '../../Providers/AuthProviders';
+import Lottie from 'lottie-react';
+
 
 const Login = () => {
+    const [error, setError] = useState('')
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const formPage = location.state?.form?.pathname || '/'
     const [showPass, setShowPass] = useState(true)
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => {
+        setError('');
+        signIn(data.email, data.password)
+            .then(result => {
+                console.log(result.user);
+                //    sweetalert 
+                Swal.fire(
+                    'Success',
+                    'Login successfully',
+                    'success'
+                )
+                navigate(formPage, { replace: true })
+            }).catch(error => {
+                setError(error.message)
+            })
+
+    };
+
     return (
-        <>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row">
-                    <div className="w-1/2 mr-12">
-                        <Lottie animationData={animation}></Lottie>
-                    </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
-                            <h1 className="text-3xl text-center font-bold">Login</h1>
-                            <form >
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="email"
-                                        required
-                                        placeholder="email"
-                                        className="input input-bordered"
-                                    />
-                                </div>
-                                <div className="form-control w-full">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <div className='relative'>
-                            <input type={showPass ? 'password' : 'text'} placeholder="Password" className="input input-bordered w-full"   />
-                            <span type="button" className='absolute btn btn-secondary btn-xs right-2 top-3' onClick={() => setShowPass(!showPass)}>{showPass ? 'show' : 'hide'}</span>
+        <div className='min-h-screen hero bg-base-200'>
+            <div className="hero-content flex-col lg:flex-row">
+                <div className="w-2/4 mr-12">
+                    <Lottie animationData={animation}></Lottie>
+                </div>
+                <div className='border-2 border-solid md:w-3/4 mx-auto p-4'>
+                    <h1 className='text-5xl font-bold text-center py-5'>Sign In !</h1>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+
+                        {/* email  */}
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input type="text" placeholder="Email" className="input input-bordered w-full" {...register("email", { required: true, maxLength: 80 })} />
                         </div>
-                                <div className="form-control mt-6">
-                                    <input
-                                        className="btn btn-outline"
-                                        type="submit"
-                                        value="Login"
-                                    />
-                                </div>
-                                </div>
-                            </form>
-                            <p className="my-4 text-center">
-                                New to SUSIS Library..
-                                <Link className="text-orange-600 font-bold ms-1" to="/signup">
-                                    Sign Up
-                                </Link>
-                            </p>
-                            {/* <p className="my-4 text-center text-red-700">{error}</p> */}
-                            <SocialLogin></SocialLogin>
+
+                        {/* password  */}
+                        <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <div className='relative'>
+                                <input type={showPass ? 'password' : 'text'} placeholder="Password" className="input input-bordered w-full" {...register("password", { required: true, maxLength: 100 })} />
+                                <span type="button" className='absolute btn btn-secondary btn-xs right-2 top-3' onClick={() => setShowPass(!showPass)}>{showPass ? 'show' : 'hide'}</span>
+                            </div>
+
                         </div>
-                    </div>
+                        <div className="form-control mt-5">
+                            <input className='btn btn-primary' type="submit" value='Login' />
+                        </div>
+
+                    </form>
+                    <div className='text-center mt-3'>New in website? <Link to='/signup'><span className='text-blue-600'>Sign Up</span></Link></div>
+                    <span className='text-red-500 text-center'>{error}</span>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
-        </>
-    )
-}
+        </div>
+    );
+};
 
 export default Login;
+

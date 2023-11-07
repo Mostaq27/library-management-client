@@ -1,0 +1,22 @@
+[
+    {
+        "photo": "https://i.ibb.co/2kxsfhB/young-man-working-with-headset.jpg",
+        "name": "Chris Wilson",
+        "designation": "Director"
+    },
+    {
+        "photo": "https://i.ibb.co/nrGc1PL/smiling-young-customer-service-girl-with-headset-her-workplace.jpg",
+        "name": "Emily Davis",
+        "designation": "Librarian"
+    },
+    {
+        "photo": "https://i.ibb.co/QPf56TM/busy-woman-doing-many-things-same-time.jpg",
+        "name": "Sarah Lee",
+        "designation": "Manager"
+    },
+    {
+        "photo": "https://i.ibb.co/ZSSRKDM/young-bearded-man-blue-shirt-with-headphones-with-microphone-looking-front-smiling-showing-thumbs-up.jpg",
+        "name": "Mike Anderson",
+        "designation": "Librarian"
+    }
+]

@@ -1,99 +1,114 @@
-
-import Lottie from "lottie-react";
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import { Link, useNavigate } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProviders';
+import Lottie from 'lottie-react';
 import animation from "../../../assets/loginAnimation.json"
-import { Link } from 'react-router-dom';
-import SocialLogin from "../SocialLogin/SocialLogin";
+const Signup = () => {
 
-const SignUp = () => {
-  return (
-    <>
-    <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="w-1/2 mr-12">
-                        <Lottie animationData={animation}/>
-                    </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <div className="card-body">
-                            <h1 className="text-3xl text-center font-bold">Sign Up</h1>
-                            <form >
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Name</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="name"
-                                        className="input input-bordered"
-                                    />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Photo URL</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="photo"
-                                        placeholder="photo url"
-                                        className="input input-bordered"
-                                    />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        required
-                                        placeholder="email"
-                                        className="input input-bordered"
-                                    />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        required
-                                        placeholder="password"
-                                        className="input input-bordered"
-                                    />
-                                    <p className="text-red-600"> </p>
+    const { register, getValues, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-                                    {/* <div class="flex items-center mt-2">
-                                        <input id="link-checkbox" onClick={handleTerm} type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="link-checkbox" class="ml-2 text-sm font-medium ">Accecpt term & conditions </label>
-                                    </div> */}
+    const onSubmit = data => {
 
-                                </div>
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photo)
+                // console.log(data.photo)
+                    .then(() => {
 
-                                {/* <div className="form-control mt-6">
-                                    <input
-                                        disabled={!accecpted}
-                                        className="btn btn-outline"
-                                        type="submit"
-                                        value="Sign Up"
+                        // const saveUser = { name: data.name, email: data.email, image: data.photo, role: 'student' }
 
-                                    />
-                                </div> */}
-                            </form>
-                            <p className="my-4 text-center">
-                                Already Have an Account?
-                                <Link className="text-orange-600 font-bold" to="/login">
-                                    Login
-                                </Link>
-                                {/* <p className="my-4 text-center text-red-600">{error}</p> */}
-                            </p>
-                            <SocialLogin></SocialLogin>
-                        </div>
-                    </div>
+                        // axiosSecure.post('/users', saveUser)
+                        //     .then(data => {
+                        //         if (data.insertedId) {
+                        //             reset();
+                        //             Swal.fire({
+                        //                 position: 'top-end',
+                        //                 icon: 'success',
+                        //                 title: 'Account created succcessfully',
+                        //                 showConfirmButton: false,
+                        //                 timer: 1500
+                        //             })
+                        //         }
+                        //     })
+                        navigate('/');
+
+                    })
+            }).catch(error => {
+                Swal.fire(`${error.message}`)
+                // console.log(error.message);
+            })
+    };
+
+    return (
+      <div className='min-h-screen hero bg-base-200'>
+            <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="w-2/4 mr-12">
+                    <Lottie animationData={animation}></Lottie>
                 </div>
-            </div>
-    </>
-  )
-}
+            <div className='border-2 border-solid md:w-2/3 mx-auto p-3 mb-3'>
+            <h1 className='text-5xl font-bold text-center'>Sign up !</h1>
+                <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Full Name</span>
+                        </label>
+                        <input type="text" {...register("name", { required: true })} placeholder="Name" className="input input-bordered" />
+                        {errors.name && <span className="text-red-500">This field is required</span>}
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <input type="text" {...register("photo", { required: true })} placeholder="Photo URL" className="input input-bordered" />
+                        {errors.photo && <span className="text-red-500">This field is required</span>}
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="email" {...register("email", { required: true })} placeholder="Email" className="input input-bordered" />
+                        {errors.email && <span className="text-red-500">This field is required</span>}
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
+                        <input type="password" {...register("password", {
+                            required: true, pattern: /^(?=.*[A-Z])(?=.*[@#$!%^&*()_+])[A-Za-z\d@#$!%^&*()_+]{6,}$/i
+                        })} placeholder="Password" className="input input-bordered" />
+                        {errors.password?.type === 'pattern' && <p className="text-red-500">More than 6 digit with capital latter & special character</p>}
 
-export default SignUp;
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Confirm Password</span>
+                        </label>
+                        <input type="password" {...register("cpassword", {
+                            required: true, minLength: 6, maxLength: 20, validate: (value) => {
+                                const { password } = getValues();
+                                return password === value || "Passwords should match!";
+                            }
+                        })} placeholder="Password again" className="input input-bordered" />
+                        {errors.cpassword && <span className="text-red-500">{errors.cpassword.message}</span>}
+                        {errors.password?.type === 'minLength' && <p className="text-red-500">Password must be 6 cherecter</p>}
+                    </div>
+                    <div className="form-control mt-4">
+                        <input className="btn btn-primary" type="submit" value="Sign Up" />
+                        <div className='text-center mt-3'>Already have an account? <Link to='/login'><span className='text-blue-600'>Login</span></Link></div>
+                    </div>
+                </form>
+                <SocialLogin></SocialLogin>
+            </div>
+        </div>
+        </div>
+    );
+};
+
+export default Signup;
