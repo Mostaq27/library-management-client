@@ -1,22 +1,19 @@
 [
     {
-        "photo": "https://i.ibb.co/2kxsfhB/young-man-working-with-headset.jpg",
-        "name": "Chris Wilson",
-        "designation": "Director"
+      "photo": "https://i.ibb.co/cNynrkh/21253335-2107-i203-007-F-m004-c9-archaeology-cartoon-set.jpg",
+      "category": "History"
     },
     {
-        "photo": "https://i.ibb.co/nrGc1PL/smiling-young-customer-service-girl-with-headset-her-workplace.jpg",
-        "name": "Emily Davis",
-        "designation": "Librarian"
+      "photo": "https://i.ibb.co/QX0jyNs/19034915-ekt3-k9ln-210813.jpg",
+      "category": "Horror"
     },
     {
-        "photo": "https://i.ibb.co/QPf56TM/busy-woman-doing-many-things-same-time.jpg",
-        "name": "Sarah Lee",
-        "designation": "Manager"
+      "photo": "https://i.ibb.co/48S2nxz/Cover-of-Drama-graphic-novel-by-Raina-Telgemeier.jpg",
+      "category": "Drama"
     },
     {
-        "photo": "https://i.ibb.co/ZSSRKDM/young-bearded-man-blue-shirt-with-headphones-with-microphone-looking-front-smiling-showing-thumbs-up.jpg",
-        "name": "Mike Anderson",
-        "designation": "Librarian"
+      "photo": "https://i.ibb.co/6yqdV8V/4827865-52016.jpg",
+      "category": "Science fiction"
     }
-]
+  ]
+  

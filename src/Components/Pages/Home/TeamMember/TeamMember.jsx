@@ -7,10 +7,10 @@ import { useEffect } from 'react';
 const TeamMember = () => {
     const [cards, setCards] = useState([]);
     useEffect(() => {
-        fetch('/team.json')
+        fetch('http://localhost:5000/team')
             .then(res => res.json())
             .then(data => {
-                console.log(data);  
+                // console.log(data);  
                 setCards(data);
             });
     }, []);
@@ -22,11 +22,11 @@ const TeamMember = () => {
                         <h3 className="text-2xl font-bold  sm:text-5xl">Meet our team</h3>
                         <p className=" text-center  dark:text-gray-400">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam <br /> natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
                     </div>
-                    <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
                         {
                             cards.map(card=> <div className="space-y-4">
                                 <motion.div whileHover={{ scale: 1.05, rotate: 3, transition: { duration: 0.3 } }}>
-                            <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center dark:bg-gray-500  max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0" src={card.photo} />
+                            <img alt="" className="object-cover h-56 w-52 mx-auto mb-4 bg-center dark:bg-gray-500  max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0" src={card.photo} />
 
                                 </motion.div>
                             <div className="flex flex-col items-center">
