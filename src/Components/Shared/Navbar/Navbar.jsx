@@ -21,13 +21,16 @@ const NavBar = () => {
     const navItem =
         <>
             <li><Link to='/'>Home</Link></li>
+            <li><Link to='/add_book'>Add Book</Link></li>
+            <li><Link to='/all_books'>All Books</Link></li>
+            <li><Link to='/borrowed_books'> Borrowed Books</Link></li>
             <li><Link to='/team'>Team</Link></li>
             <li><Link to='/about'>About</Link></li>
             {
                 user
                     ?
                     <>
-                        <li><Link to='/mycart'>My Cart</Link></li>
+                        
                         <div className="tooltip tooltip-right" data-tip={user?.displayName}>
                             <div className="avatar">
                                 <div className="w-10 rounded-full">
