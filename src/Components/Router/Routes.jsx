@@ -12,6 +12,10 @@ import TeamMember from "../Pages/Home/TeamMember/TeamMember";
 import About from "../Pages/Home/About/About";
 import AddBook from "../Pages/AddBook/AddBook";
 import CategoryBooks from "../Pages/CategoryBooks/CategoryBooks";
+import UpdateBook from "../Pages/UpdateBook/UpdateBook";
+import AllBooks from "../Pages/AllBooks/AllBooks";
+import Bookdetails from "../Pages/BookDetails/Bookdetails";
+import ReadBook from "../Pages/ReadBook/ReadBook";
 
 
 
@@ -22,15 +26,32 @@ import CategoryBooks from "../Pages/CategoryBooks/CategoryBooks";
       children: [
         {
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: ()=>fetch('http://localhost:5000/category')
+        },
+        {
+          path: '/all_books',
+          element: <AllBooks></AllBooks>
         },
         {
           path:'/add_book',
           element:<AddBook></AddBook>
         },
         {
-          path: '/category_books',
+          path: '/category_books/:category',
           element: <CategoryBooks></CategoryBooks>
+        },
+        {
+          path: `/details/:id`,
+          element: <Bookdetails></Bookdetails>
+        },
+        {
+          path:'/read_book/:id',
+          element: <ReadBook></ReadBook>
+        },
+        {
+          path:'/update_book',
+          element: <UpdateBook></UpdateBook>
         },
         {
           path: "/signup",
