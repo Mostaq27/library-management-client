@@ -6,7 +6,7 @@ live site link : https://library-management-syste-d2072.web.app
 
 ## Features
 - 
-- 
+- implement 2 type of authentication system , like password, google
 - user can add Books and Update Books 
 - Dark theme toggle
 
