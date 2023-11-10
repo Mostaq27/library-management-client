@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import AllBooksCard from "./AllBooksCard";
 import { RingLoader } from "react-spinners";
-import Marquee from "react-fast-marquee";
 import { Helmet } from "react-helmet";
+import Typewriter from "react-ts-typewriter";
 
 
 
@@ -31,10 +31,17 @@ const AllBooks = () => {
             <Helmet><title>All_Books | SUSIS Library</title></Helmet>
             <div className="pb-10">
                 <div className="text-center space-y-7 py-5">
-                    <h2 className="text-5xl font-bold text-center ">All books</h2>
-                    <Marquee pauseOnHover={true} speed={100}>
+                    <h2 className="text-5xl font-bold text-center">All books</h2>
+                    <p className="text-blue-800 my-4 text-xl font-semibold">
+                        <Typewriter text='Read books And Gain knowledge.'
+                            loop={true}
+                            // cursor={true}
+                            delay={800}
+                            speed={100} 
+                            /></p>
+                    {/* <Marquee pauseOnHover={true} speed={100}>
                         <p className="text-blue-800">Read books And Gain knowledge</p>
-                    </Marquee>
+                    </Marquee> */}
                 </div>
                 {
                     isLoading ? <div className="  justify-center items-center flex py-20">
