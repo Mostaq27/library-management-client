@@ -23,14 +23,13 @@ const NavBar = () => {
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/all_books'>All Books</Link></li>
             <li><Link to='/add_book'>Add Book</Link></li>
-            <li><Link to='/borrowed'> Borrowed</Link></li>
-            <li><Link to='/team'>Team</Link></li>
             <li><Link to='/about'>About</Link></li>
             {
                 user
                     ?
                     <>
-                        
+
+                        <li><Link to='/borrowed'> Borrowed</Link></li>
                         <div className="tooltip tooltip-right" data-tip={user?.displayName}>
                             <div className="avatar">
                                 <div className="w-10 rounded-full">
@@ -45,13 +44,13 @@ const NavBar = () => {
         </>
 
 
-const handleLogOut = () => {
-  logOut()
-      .then(() => { })
-      .catch((error) => {
-          console.error(error);
-      });
-};
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     return (
         <div>
@@ -65,7 +64,7 @@ const handleLogOut = () => {
                             {navItem}
                         </ul>
                     </div>
-                    <img src={logo} alt="" className='w-16'/>
+                    <img src={logo} alt="" className='w-16' />
                     <Link to='/' >
                         <a className="invisible md:visible text-3xl font-semibold">SUSIS <span className='text-yellow-600'>Library</span></a>
                     </Link>

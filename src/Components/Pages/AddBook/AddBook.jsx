@@ -22,6 +22,7 @@ const AddBook = () => {
         .then(res=>{
             if(res.data.insertedId){
                 toast.success("Book added successfully.")
+                form.reset();
             }
             console.log(res.data)
         })

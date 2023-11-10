@@ -131,7 +131,7 @@ const Bookdetails = () => {
                                                             </label>
                                                             <label className="input-group">
 
-                                                                <input type="date" name="return" placeholder="Return Date" className="input input-bordered w-full" />
+                                                                <input type="date" name="return" placeholder="Return Date" className="input input-bordered w-full" required />
                                                             </label>
                                                         </div>
                                                         <div className="form-control md:w-1/2 ml-4">
@@ -140,7 +140,7 @@ const Bookdetails = () => {
                                                             </label>
                                                             <label className="input-group">
 
-                                                                <input type="date" name="borrow" placeholder="Borrowe Date" className="input input-bordered w-full" />
+                                                                <input type="date" name="borrow" placeholder="Borrowe Date" className="input input-bordered w-full" required />
                                                             </label>
                                                         </div>
                                                     </div>
