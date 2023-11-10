@@ -1,8 +1,17 @@
-# React + Vite
+# b8a11-client-side-Mostaq27
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+live site link : https://library-management-syste-d2072.web.app
 
-Currently, two official plugins are available:
+### Website name: SUSIS Library
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- 
+- 
+- user can add Books and Update Books 
+- Dark theme toggle
+
+## Used technology and packages 
+- React, Tailwind CSS, daisyUI, flobite
+- react-icon, react-hook-form, react-router-dom, swiper, sweetalert2, momentjs, framer-motion
+- axios, tanstack-query
+- server side: express, mongodb, dotenv, jsonwebtoken
