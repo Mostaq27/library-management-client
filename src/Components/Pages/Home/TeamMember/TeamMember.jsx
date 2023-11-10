@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 const TeamMember = () => {
     const [cards, setCards] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/team')
+        fetch('https://library-management-system-server-bay.vercel.app/team')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);  
@@ -17,7 +17,7 @@ const TeamMember = () => {
     return (
         <div>
             <section className="">
-                <div className="container p-4 mx-auto space-y-16 sm:p-10">
+                <div className="container p-4 mx-auto space-y-16 ">
                     <div className="text-center space-y-5">
                         <h3 className="text-2xl font-bold  sm:text-5xl">Meet our team</h3>
                         <p className=" text-center  dark:text-gray-400">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam <br /> natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>

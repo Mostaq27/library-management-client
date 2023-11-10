@@ -12,7 +12,7 @@ import { Rating } from "@smastrom/react-rating";
 const FeedBack = () => {
     const [cards, setCards] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://library-management-system-server-bay.vercel.app/review')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);  

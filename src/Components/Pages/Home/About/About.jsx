@@ -9,11 +9,10 @@ import { motion } from 'framer-motion';
 const About = () => {
     return (
         <div>
-            <div className="text-center space-x-5 py-6">
+            <div className="text-center space-x-5">
                 <h2 className="text-5xl font-bold pb-4">About Us</h2>
                 <p>we are passionate about enhancing your reading experience. With a team dedicated to delivering <br />innovative solutions, we strive to make your library interactions seamless and enjoyable. Our mission <br /> is to connect you with the world of literature, providing convenient tools and access to an extensive <br /> collection of books.Join us on this literary journey and discover the future of library management.</p>
             </div>
-
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <motion.div whileHover={{ scale: 1.05, rotate: 3, transition: { duration: 0.3 } }}>

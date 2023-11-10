@@ -1,13 +1,14 @@
 
-import logo from "../../../assets/logo.png"
+import { Link } from "react-router-dom";
+import logo from "../../../assets/logo1.png"
 
 
 const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
             <aside>
-                <img src={logo} className="h-40" alt="" />
-                <p className="text-xl font-medium">SUSIS Library.<br />Providing reliable tech since 1992</p>
+               <img className="h-[70px]" src={logo} alt="" />
+                <p className="text-2xl font-medium">SUSIS <span className="text-yellow-600">Library.</span><br />Providing reliable tech since 1992</p>
             </aside>
             <nav>
                 <header className="footer-title">Services</header>
@@ -18,7 +19,7 @@ const Footer = () => {
             </nav>
             <nav>
                 <header className="footer-title">Company</header>
-                <a className="link link-hover">About us</a>
+                <Link to="/about"><a className="link link-hover">About us</a></Link>
                 <a className="link link-hover">Contact</a>
                 <a className="link link-hover">Jobs</a>
                 <a className="link link-hover">Press kit</a>

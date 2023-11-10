@@ -16,6 +16,8 @@ import UpdateBook from "../Pages/UpdateBook/UpdateBook";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import Bookdetails from "../Pages/BookDetails/Bookdetails";
 import ReadBook from "../Pages/ReadBook/ReadBook";
+import Borrowed from "../Pages/Borrowed/Borrowed";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -27,7 +29,7 @@ import ReadBook from "../Pages/ReadBook/ReadBook";
         {
             path: "/",
             element: <Home></Home>,
-            loader: ()=>fetch('http://localhost:5000/category')
+            loader: ()=>fetch('https://library-management-system-server-bay.vercel.app/category')
         },
         {
           path: '/all_books',
@@ -35,7 +37,7 @@ import ReadBook from "../Pages/ReadBook/ReadBook";
         },
         {
           path:'/add_book',
-          element:<AddBook></AddBook>
+          element:<PrivateRoute><AddBook></AddBook></PrivateRoute>
         },
         {
           path: '/category_books/:category',
@@ -43,15 +45,20 @@ import ReadBook from "../Pages/ReadBook/ReadBook";
         },
         {
           path: `/details/:id`,
-          element: <Bookdetails></Bookdetails>
+          element: <PrivateRoute><Bookdetails></Bookdetails></PrivateRoute>
         },
         {
           path:'/read_book/:id',
           element: <ReadBook></ReadBook>
         },
         {
-          path:'/update_book',
-          element: <UpdateBook></UpdateBook>
+          path: '/borrowed',
+          element: <PrivateRoute><Borrowed></Borrowed></PrivateRoute>,
+        },
+        {
+          path:'/update_book/:id',
+          element: <PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
+          loader: ({params}) => fetch(`https://library-management-system-server-bay.vercel.app/books/${params.id}`)
         },
         {
           path: "/signup",

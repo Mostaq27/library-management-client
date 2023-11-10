@@ -1,4 +1,6 @@
+import axios from "axios";
 import { Helmet } from "react-helmet";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const AddBook = () => {
@@ -16,11 +18,18 @@ const AddBook = () => {
         const category = form.category.value;
         const description = form.description.value;
         const newBook = { book, quantity, author, rating, category, description, photo }
-        console.log(newBook)
+        axios.post("https://library-management-system-server-bay.vercel.app/books",newBook)
+        .then(res=>{
+            if(res.data.insertedId){
+                toast.success("Book added successfully.")
+            }
+            console.log(res.data)
+        })
     }
   return (
     
         <>
+        <Toaster />
          <Helmet>
                 <title>Addbook | SUSIS Library</title>
             </Helmet>
@@ -95,8 +104,8 @@ const AddBook = () => {
                             >
                                 <option value="history">History</option>
                                 <option value="horror">Horror</option>
-                                <option value="drama">Drama</option>
-                                <option value="Science fiction">Science fiction</option>
+                                <option value="computers & tech">Computers & Tech</option>
+                                <option value="science fiction">Science fiction</option>
                             </select>
                         </label>
                     </div>

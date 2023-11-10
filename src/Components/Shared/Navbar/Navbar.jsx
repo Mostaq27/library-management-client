@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.png'
+import logo from '../../../assets/logo1.png'
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 const NavBar = () => {
@@ -67,7 +67,7 @@ const handleLogOut = () => {
                     </div>
                     <img src={logo} alt="" className='w-16'/>
                     <Link to='/' >
-                        <a className="invisible md:visible text-3xl font-semibold">SUSIS Library</a>
+                        <a className="invisible md:visible text-3xl font-semibold">SUSIS <span className='text-yellow-600'>Library</span></a>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">

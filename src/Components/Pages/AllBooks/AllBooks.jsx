@@ -1,34 +1,65 @@
 import { useEffect, useState } from "react";
 import AllBooksCard from "./AllBooksCard";
+import { RingLoader } from "react-spinners";
+import Marquee from "react-fast-marquee";
+import { Helmet } from "react-helmet";
 
 
 
 const AllBooks = () => {
     const [books, setBooks] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/books`)
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 3000);
+    }, []);
+
+    useEffect(() => {
+        fetch(`https://library-management-system-server-bay.vercel.app/books`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setBooks(data)
+                setIsLoading(false)
             })
     }, [])
     return (
-        <div className="pb-10">
-            <div className="text-center space-y-7 py-5">
-                <h2 className="text-5xl font-bold text-center ">All books</h2>
-                <p>Read books And Gain knowledge</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10">
+        <>
+            <Helmet><title>All_Books | SUSIS Library</title></Helmet>
+            <div className="pb-10">
+                <div className="text-center space-y-7 py-5">
+                    <h2 className="text-5xl font-bold text-center ">All books</h2>
+                    <Marquee pauseOnHover={true} speed={100}>
+                        <p className="text-blue-800">Read books And Gain knowledge</p>
+                    </Marquee>
+                </div>
                 {
-                    books.map(card => <AllBooksCard
-                        key={card._id}
-                        card={card}></AllBooksCard>)
-                }
-            </div>
+                    isLoading ? <div className="  justify-center items-center flex py-20">
+                        <RingLoader
+                            color="hsla(10, 91%, 27%, 1)"
+                            cssOverride={{}}
+                            loading
+                            size={74}
+                            speedMultiplier={1}
+                        />
+                    </div>
+                        :
 
-        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-10">
+                            {
+                                books.map(card => <AllBooksCard
+                                    key={card._id}
+                                    card={card}></AllBooksCard>)
+                            }
+                        </div>
+                }
+
+            </div>
+        </>
     );
 };
 

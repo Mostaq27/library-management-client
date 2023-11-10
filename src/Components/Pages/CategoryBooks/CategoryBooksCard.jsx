@@ -12,10 +12,10 @@ const CategoryBooksCard = ({bk}) => {
             <div class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <img class="object-cover w-full rounded-t-lg h-72  md:w-48 md:rounded-none md:rounded-l-lg" src={photo} alt="" />
                 <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="text-2xl font-bold ">{book}</h5>
+                    <h5 class="text-2xl font-bold text-gray-700 dark:text-gray-400">{book}</h5>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">by {author}</p>
-                    <h5 class="text-2xl font-bold ">{category}</h5>
-                    <div className="  items-center py-4 ">
+                    <h5 class="text-2xl font-bold text-gray-700 dark:text-gray-400">{category}</h5>
+                    <div className="items-center py-4 ">
                         <Rating
                             style={{ maxWidth: 120 }}
                             value={rating}
