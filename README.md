@@ -1,6 +1,6 @@
 # b8a11-client-side-Mostaq27
 
-live site link : https://library-management-syste-d2072.web.app
+live site link : https://susis-library.web.app
 
 ### Website name: SUSIS Library
 

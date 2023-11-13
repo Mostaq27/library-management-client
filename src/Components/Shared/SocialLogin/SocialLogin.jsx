@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import { FaGoogle } from "react-icons/fa";
+// import { FaGoogle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 // import { AuthContext } from "../../provider/AuthProvider";
