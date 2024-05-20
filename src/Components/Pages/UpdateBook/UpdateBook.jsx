@@ -48,7 +48,7 @@ const UpdateBook = () => {
             <>
             <Toaster />
                 <Helmet>
-                    <title>UpdateBook | SUSIS Library</title>
+                    <title>UpdateBook | RMSTU Central Library</title>
                 </Helmet>
                 <div className="bg-base-200 p-24">
                     <h2 className="text-3xl font-extrabold text-center">Update a Book</h2>

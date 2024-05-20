@@ -22,7 +22,7 @@ const ReadBook = () => {
   console.log("single", singleBook)
   return (
     <>
-      <Helmet><title>ReadBook | SUSIS Library</title></Helmet>
+      <Helmet><title>ReadBook | RMSTU Central Library</title></Helmet>
       <div className='my-8 space-y-5'>
        
         <div className='flex flex-col md:flex-row justify-evenly'>

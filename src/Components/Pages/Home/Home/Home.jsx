@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 const Home = () => {
   return (
     <div className=''>
-      <Helmet><title>Home | SUSIS Library</title></Helmet>
+      <Helmet><title>Home | RMSTU Central Library</title></Helmet>
       <Banner></Banner>
       <Category></Category>
       <About></About>

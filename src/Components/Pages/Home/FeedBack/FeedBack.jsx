@@ -23,7 +23,7 @@ const FeedBack = () => {
     return (
         <>
             <div className="bg-center bg-no-repeat bg-[url('https://i.ibb.co/yVstWFv/study-group-learning-library.jpg')] bg-gray-700 bg-blend-multiply">
-                <h2 className="text-5xl font-bold text-center space-x-8 py-8 divider">What People Say</h2>
+                <h2 className="text-5xl font-bold text-center text-white space-x-8 py-8 divider">What People Say</h2>
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}

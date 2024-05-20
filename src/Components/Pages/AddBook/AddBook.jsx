@@ -32,7 +32,7 @@ const AddBook = () => {
         <>
         <Toaster />
          <Helmet>
-                <title>Addbook | SUSIS Library</title>
+                <title>Addbook | RMSTU Central Library</title>
             </Helmet>
         <div className="bg-base-200 p-24">
             <h2 className="text-3xl font-extrabold text-center">Add a Book</h2>

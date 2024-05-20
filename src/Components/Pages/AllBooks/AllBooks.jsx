@@ -28,7 +28,7 @@ const AllBooks = () => {
     }, [])
     return (
         <>
-            <Helmet><title>All_Books | SUSIS Library</title></Helmet>
+            <Helmet><title>All_Books | RMSTU Central Library</title></Helmet>
             <div className="pb-10">
                 <div className="text-center space-y-7 py-5">
                     <h2 className="text-5xl font-bold text-center">All books</h2>

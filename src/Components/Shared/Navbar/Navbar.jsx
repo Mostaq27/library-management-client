@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo1.png'
+import logo from '../../../assets/rmstu.png'
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 const NavBar = () => {
@@ -54,7 +54,7 @@ const NavBar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-10">
+            <div className="navbar sticky bg-base-10 shadow-md">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -66,7 +66,7 @@ const NavBar = () => {
                     </div>
                     <img src={logo} alt="" className='w-16' />
                     <Link to='/' >
-                        <a className="invisible md:visible text-3xl font-semibold">SUSIS <span className='text-yellow-600'>Library</span></a>
+                        <a className="invisible md:visible text-3xl font-semibold">RMSTU <span className='text-yellow-600'>Central Library</span></a>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">

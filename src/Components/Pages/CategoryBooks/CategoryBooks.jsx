@@ -28,7 +28,7 @@ const CategoryBooks = () => {
   }, [])
   return (
     <>
-      <Helmet><title>CategoryBooks | SUSIS Library</title></Helmet>
+      <Helmet><title>CategoryBooks | RMSTU Central Library</title></Helmet>
       <div>
         <div className="p-10">
           <h2 className="text-4xl font-bold text-center">Category: {category}</h2>

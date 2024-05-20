@@ -22,7 +22,7 @@ const Borrowed = () => {
   return (
     <>
       <Helmet>
-        <title>BorrowedBooks | SUSIS Library</title>
+        <title>BorrowedBooks | RMSTU Central Library</title>
       </Helmet>
       <div>
         <div className="p-10">
