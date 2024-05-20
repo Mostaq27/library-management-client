@@ -52,8 +52,8 @@ const BorrowedCard = ({ borrow }) => {
     return (
         <>
         <Toaster />
-            <div className="relative flex w-full max-w-[48rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md md:flex-row">
-                <div className="relative  m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border lg:w-2/4">
+            <div className="relative flex w-[430px] max-w-[48rem] flex-col rounded-xl border border-indigo-300 dark:bg-gray-400 bg-clip-border dark:text-white shadow-xl md:flex-row">
+                <div className="relative  m-0 overflow-hidden  rounded-r-none shrink-0 rounded-xl bg-clip-border lg:w-2/4">
                     <img
                         src={photo}
                         alt="image"
@@ -69,10 +69,10 @@ const BorrowedCard = ({ borrow }) => {
                         Return: <br /> {returnBook}
                     </h6>
                     </div>
-                    <h4 className="block mb-2 text-2xl antialiased font-medium leading-snug tracking-normal text-blue-gray-900">
-                        Book: {book}
+                    <h4 className="block mb-2 text-2xl antialiased font-medium leading-snug tracking-normal dark:text-white">
+                         {book}
                     </h4>
-                    <p className="block mb-8 font-sans text-sm antialiased font-normal leading-relaxed text-gray-700">
+                    <p className="block mb-8 font-sans text-sm antialiased font-normal leading-relaxed dark:text-white">
                        Cayegory: {category}
                     </p>
                     <a className="inline-block" >
@@ -85,14 +85,14 @@ const BorrowedCard = ({ borrow }) => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
-                                stroke-width="2"
+                                strokeWidth="2"
                                 stroke="currentColor"
                                 aria-hidden="true"
                                 className="w-4 h-4"
                             >
                                 <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
                                 ></path>
                             </svg>
