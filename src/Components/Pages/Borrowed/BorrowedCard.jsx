@@ -75,6 +75,9 @@ const BorrowedCard = ({ borrow }) => {
                     <p className="block mb-8 font-sans text-sm antialiased font-normal leading-relaxed dark:text-white">
                        Cayegory: {category}
                     </p>
+                    <p className="block mb-8 font-sans text-sm antialiased font-normal leading-relaxed dark:text-white">
+                    Borrowed by: {user}
+                    </p>
                     <a className="inline-block" >
                         <button onClick={()=>handleReturn(_id)}
                             className="flex items-center gap-2 px-6 py-3 font-sans text-xs font-bold text-center text-pink-500 uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
