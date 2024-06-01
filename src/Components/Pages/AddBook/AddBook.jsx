@@ -104,6 +104,8 @@ const AddBook = () => {
                                 name="category"
                             >
                                 <option value="history">History</option>
+                                <option value="management">Management</option>
+                                <option value="fisheries">Fisheries</option>
                                 <option value="horror">Horror</option>
                                 <option value="computers & tech">Computers & Tech</option>
                                 <option value="science fiction">Science fiction</option>
