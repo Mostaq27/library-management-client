@@ -2,7 +2,7 @@
 
 live site link : https://susis-library.web.app
 
-### Website name: RMSTU Central Library
+### Website name: `RMSTU Central Library`
 
 ## Features
 - used private route
@@ -12,7 +12,7 @@ live site link : https://susis-library.web.app
 - Dark theme toggle
 
 ## Used technology and packages 
-- React, Tailwind CSS, daisyUI, flobite
+- `React, Tailwind CSS, daisyUI, flobite`
 - react-icon, react-hook-form, react-router-dom, swiper, sweetalert2, momentjs, framer-motion
 - axios
 - server side: express, mongodb, dotenv, jsonwebtoken
