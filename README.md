@@ -13,6 +13,6 @@ live site link : https://susis-library.web.app
 
 ## Used technology and packages 
 - `React, Tailwind CSS, daisyUI, flobite`
-- react-icon, react-hook-form, react-router-dom, swiper, sweetalert2, momentjs, framer-motion
-- axios
-- server side: express, mongodb, dotenv, jsonwebtoken
+- `react-icon, react-hook-form, react-router-dom, swiper, sweetalert2, momentjs, framer-motion`
+-` axios`
+- `server side: express, mongodb, dotenv, jsonwebtoken`
