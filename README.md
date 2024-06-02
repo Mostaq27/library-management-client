@@ -1,4 +1,4 @@
-# RMSTU Central Library `Web Engineering Lab Course Code: CSE 3106`
+#  Library Management System `Web Engineering Lab Course Code: CSE 3106`
 
 live site link : https://susis-library.web.app
 
