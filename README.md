@@ -1,8 +1,8 @@
-# b8a11-client-side-Mostaq27
+# RMSTU Central Library `Web Engineering Lab Course Code: CSE 3106`
 
 live site link : https://susis-library.web.app
 
-### Website name: SUSIS Library
+### Website name: RMSTU Central Library
 
 ## Features
 - used private route
